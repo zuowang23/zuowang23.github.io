@@ -26,7 +26,7 @@ author:
   name             : #"Your Sidebar Name"
   pronouns         : # example: "she/her"  
   bio              : #"Short biography for the left-hand sidebar"
-  location         : "Earth"
+  location         : #"Earth"
   employer         : #"Red Brick University"
   uri              : # URL
   email            : "zuo.wang@m.scnu.edu.cn" 
@@ -134,7 +134,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : #&twitter
 facebook:
   username               :
   app_id                 :
@@ -218,7 +218,7 @@ kramdown:
 # These settings control the types of collections used by the template
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
