@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://zuowang23.github.io/al-folio/sitemap.xml
+Sitemap: https://zuowang23.github.io/sitemap.xml
