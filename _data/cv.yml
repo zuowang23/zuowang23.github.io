@@ -45,11 +45,11 @@
     - title: Selected Recent Publications
       year: 2022 - now
       maindescription: "Full list: <a href=\"/publications/\" target=\"_blank\">/publications/</a>"
-      description:
-        - Wang, Z., and He, L., "Stable excitations and holographic transportation in tensor networks of critical spin chains," arXiv:2501.03084 (2025).
-        - Wang, Z., and He, L., "Emergent non-Hermitian conservation laws at exceptional points," Phys. Rev. B 111, L100305 (2025).
-        - Wang, Z., Zhu, S.-L., Lang, L.-J., and He, L., "Measurement-induced integer families of critical dynamical scaling in quantum many-body systems," arXiv:2308.06567 (2023).
-        - Wang, Z., Lang, L.-J., and He, L., "Emergent Mott insulators and non-Hermitian conservation laws in an interacting bosonic chain with noninteger filling and nonreciprocal hopping," Phys. Rev. B 105, 054315 (2022).
+      # description:
+      #   - Wang, Z., and He, L., "Stable excitations and holographic transportation in tensor networks of critical spin chains," arXiv:2501.03084 (2025).
+      #   - Wang, Z., and He, L., "Emergent non-Hermitian conservation laws at exceptional points," Phys. Rev. B 111, L100305 (2025).
+      #   - Wang, Z., Zhu, S.-L., Lang, L.-J., and He, L., "Measurement-induced integer families of critical dynamical scaling in quantum many-body systems," arXiv:2308.06567 (2023).
+      #   - Wang, Z., Lang, L.-J., and He, L., "Emergent Mott insulators and non-Hermitian conservation laws in an interacting bosonic chain with noninteger filling and nonreciprocal hopping," Phys. Rev. B 105, 054315 (2022).
 
 - title: Selected Awards
   type: time_table
@@ -70,5 +70,3 @@
   contents:
     - name: Programming and Scientific Computing
       value: Python, Julia, MATLAB, Mathematica, C/C++
-    - name: Research and Writing Tools
-      value: Linux/Unix, LaTeX
