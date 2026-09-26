@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Visiting PhD Student in Theoretical Physics
+subtitle: Visiting PhD Researcher in Theoretical Physics
 
 profile:
   align: right
@@ -28,7 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a visiting PhD student at the Max Planck Institute for the Physics of Complex Systems (MPI-PKS), and a PhD candidate in the combined Master's and PhD program at South China Normal University.
+I am a visiting PhD researcher at the Max Planck Institute for the Physics of Complex Systems (MPI-PKS), and a PhD candidate in the combined Master's and PhD program at South China Normal University.
 
 My research focuses on:
 - Physics in open quantum many-body systems

@@ -4,7 +4,7 @@
     - name: Full Name
       value: Zuo Wang
     - name: Current Position
-      value: Visiting PhD student, Max Planck Institute for the Physics of Complex Systems
+      value: Visiting PhD researcher, Max Planck Institute for the Physics of Complex Systems
     - name: Homepage
       value: <a href="https://zuowang23.github.io/" target="_blank">zuowang23.github.io</a>
     - name: Email (MPI-PKS)
@@ -19,7 +19,7 @@
 - title: Education
   type: time_table
   contents:
-    - title: Visiting PhD Student
+    - title: Visiting PhD Researcher
       institution: Max Planck Institute for the Physics of Complex Systems
       year: 2025 - now
       description:
@@ -55,8 +55,9 @@
   type: time_table
   contents:
     - title: Scholarships
-      year: 2021 - 2024
+      year: 2021 - 2027
       items:
+        - China Scholarship Council Scholarship, national award for research abroad (2025 - 2027)
         - National Scholarship, Ministry of Education of the People's Republic of China (2022)
         - Graduate Scholarship, South China Normal University (2021, 2022, 2023, 2024)
     - title: Competitions
