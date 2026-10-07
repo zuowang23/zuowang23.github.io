@@ -23,13 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-submitted-a-new-paper-to-arxiv-suppression-of-decoherence-at-exceptional-transitions",
-          title: 'Submitted a new paper to arXiv: Suppression of Decoherence at Exceptional Transitions.',
-          description: "",
-          section: "News",},{id: "news-submitted-a-new-paper-to-arxiv-black-hole-signatures-in-the-finite-temperature-critical-ising-chain",
-          title: 'Submitted a new paper to arXiv: Black-Hole Signatures in the Finite-Temperature Critical Ising...',
-          description: "",
-          section: "News",},{
+        },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
