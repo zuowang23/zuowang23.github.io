@@ -42,7 +42,7 @@
 - title: Publications
   type: time_table
   contents:
-    - title: Selected Recent Publications
+    - title: 
       year: 2022 - now
       maindescription: "Full list: <a href=\"/publications/\" target=\"_blank\">/publications/</a>"
       # description:
@@ -59,15 +59,15 @@
       items:
         - China Scholarship Council Scholarship, national award for research abroad (2025 - 2027)
         - National Scholarship, Ministry of Education of the People's Republic of China (2022)
-        - Graduate Scholarship, South China Normal University (2021, 2022, 2023, 2024)
+        - Graduate Scholarship, South China Normal University (2021, 2022, 2023, 2024, 2025, 2026, 2027)
     - title: Competitions
       year: 2023
       items:
         - Second Prize, Graduate Academic Forum, South China Normal University
         - Excellence in Presentation Award, South China Normal University
 
-- title: Professional Skills
-  type: map
-  contents:
-    - name: Programming and Scientific Computing
-      value: Python, Julia, MATLAB, Mathematica, C/C++
+# - title: Professional Skills
+#   type: map
+#   contents:
+#     - name: Programming and Scientific Computing
+#       value: Python, Julia, MATLAB, Mathematica, C/C++
