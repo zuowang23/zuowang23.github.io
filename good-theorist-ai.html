@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Be a Good Theoretical Physicist in the Age of AI</title>
+<meta name="description" content="A working checklist for early-career theoretical physicists: foundations, research taste, working with AI, verification, building a research program, talks, posters, CVs and career.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --ink: #1d1d1b;
+    --muted: #5f5d57;
+    --rule: #e2dfd7;
+    --accent: #2b4c7e;
+    --accent-soft: #e8edf5;
+    --done: #8a877f;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a;
+      --ink: #e7e5df;
+      --muted: #a3a09a;
+      --rule: #2e3036;
+      --accent: #8fb0e6;
+      --accent-soft: #1f2a3c;
+      --done: #75736d;
+      --card: #1c1d21;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 22px 96px; }
+  header .kicker {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 0 0 14px;
+  }
+  h1 { font-size: 40px; line-height: 1.15; margin: 0 0 16px; font-weight: 700; letter-spacing: -.01em; }
+  .byline { font-family: Inter, system-ui, sans-serif; font-size: 14px; color: var(--muted); margin: 0 0 36px; }
+  .byline a { color: inherit; }
+  .lead { font-size: 20px; }
+  p { margin: 0 0 18px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .principle {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 18px 22px; margin: 28px 0 28px;
+    border-radius: 0 6px 6px 0;
+  }
+  .principle p { margin: 0; }
+  .label {
+    display: block; font-family: Inter, system-ui, sans-serif; font-size: 13px;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 6px; font-weight: 600;
+  }
+  .howto { font-size: 17px; color: var(--muted); }
+
+  nav.toc {
+    font-family: Inter, system-ui, sans-serif; font-size: 15px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 18px 0; margin: 8px 0 40px;
+  }
+  nav.toc ol { margin: 0; padding-left: 24px; columns: 2; column-gap: 32px; }
+  nav.toc li { margin: 3px 0; break-inside: avoid; }
+  nav.toc a { color: var(--ink); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent); }
+
+  .progress-all {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg);
+    font-family: Inter, system-ui, sans-serif; font-size: 13px; color: var(--muted);
+    padding: 10px 0; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .bar { flex: 1; min-width: 80px; height: 4px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+  .bar > span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s ease; }
+  .btn {
+    font: inherit; color: var(--muted); background: none; border: 1px solid var(--rule);
+    border-radius: 4px; padding: 3px 9px; cursor: pointer;
+  }
+  .btn:hover { color: var(--ink); border-color: var(--muted); }
+  .btn[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+
+  section { margin: 48px 0 0; scroll-margin-top: 48px; }
+  h2 { font-size: 26px; line-height: 1.25; margin: 0 0 6px; font-weight: 700; }
+  h2 .num { color: var(--accent); margin-right: 10px; font-weight: 600; }
+  .sec-count { font-family: Inter, system-ui, sans-serif; font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+
+  ul.check { list-style: none; margin: 0 0 8px; padding: 0; }
+  ul.check li { border-bottom: 1px solid var(--rule); }
+  ul.check li:last-child { border-bottom: none; }
+  ul.check label {
+    display: grid; grid-template-columns: 26px 1fr; gap: 8px;
+    padding: 11px 0; cursor: pointer;
+  }
+  ul.check input {
+    appearance: none; -webkit-appearance: none;
+    width: 18px; height: 18px; margin: 5px 0 0;
+    border: 1.5px solid var(--muted); border-radius: 4px; cursor: pointer;
+    display: grid; place-content: center; background: var(--card);
+  }
+  ul.check input:checked { background: var(--accent); border-color: var(--accent); }
+  ul.check input:checked::after {
+    content: ""; width: 5px; height: 10px; border: solid var(--bg); border-width: 0 2px 2px 0;
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+  ul.check input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul.check .t b { font-weight: 600; }
+  ul.check .why { display: block; color: var(--muted); font-size: 16px; margin-top: 2px; }
+  ul.check input:checked + .t { color: var(--done); }
+  ul.check input:checked + .t b { text-decoration: line-through; text-decoration-thickness: 1px; }
+  body.hide-done ul.check li.is-done { display: none; }
+
+  .rhythm { margin: 0; padding: 0; }
+  .rhythm div { display: grid; grid-template-columns: 150px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .rhythm div:last-child { border-bottom: none; }
+  .rhythm dt { font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; color: var(--accent); padding-top: 3px; }
+  .rhythm dd { margin: 0; }
+
+  footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-family: Inter, system-ui, sans-serif; font-size: 14px; color: var(--muted);
+  }
+  footer p { margin: 0 0 8px; }
+
+  @media (max-width: 560px) {
+    body { font-size: 17px; }
+    h1 { font-size: 31px; }
+    .lead { font-size: 18px; }
+    nav.toc ol { columns: 1; }
+    .wrap { padding-top: 36px; }
+    .rhythm div { grid-template-columns: 1fr; gap: 2px; }
+  }
+  @media print {
+    .progress-all { display: none; }
+    body { background: #fff; color: #000; }
+    body.hide-done ul.check li.is-done { display: block; }
+    section { break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">A working checklist</p>
+  <h1>How to Be a Good Theoretical Physicist in the Age of AI</h1>
+  <p class="byline">Zuo Wang · <a href="https://zuowang23.github.io/">zuowang23.github.io</a> · Last updated November 2026</p>
+</header>
+
+<p class="lead">Gerard ’t Hooft’s page <a href="https://www.goodtheorist.science/">How to become a GOOD Theoretical Physicist</a> lays out <em>what</em> to learn, from mathematics up through quantum field theory. Every item there still applies. This page is about something different: <em>how</em> to work, now that AI can derive, compute and even prove things for us.</p>
+
+<p>In 2026 an AI system produced a claimed proof for one of the Millennium Prize Problems, and AI tools are now part of daily work in theoretical physics. I am an early-career theorist, and I wrote this list for myself, to keep in mind which skills will keep a physicist valuable as these tools improve. I share it in case it helps others too. It is opinionated, incomplete, and will change as AI changes.</p>
+
+<div class="principle">
+  <span class="label">The guiding principle</span>
+  <p>AI is making answers cheap. What stays scarce is knowing <em>which questions matter</em>, <em>understanding</em> what the answers mean, and the <em>judgment</em> to tell when they are wrong. Build those three things above everything else.</p>
+</div>
+
+<p class="howto"><strong>How to use this list.</strong> Don’t try to do everything at once. Each semester, pick three unticked items and work on them deliberately. The <a href="#rhythm">rhythm</a> at the end suggests what to repeat weekly, monthly and yearly. Your ticks are saved in your own browser.</p>
+
+<nav class="toc" aria-label="Contents">
+  <ol>
+    <li><a href="#foundations">Foundations still matter</a></li>
+    <li><a href="#taste">Research taste</a></li>
+    <li><a href="#ai">Working with AI</a></li>
+    <li><a href="#verify">Verification</a></li>
+    <li><a href="#reality">Staying close to nature</a></li>
+    <li><a href="#program">Building a research program</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#posters">Posters</a></li>
+    <li><a href="#cv">CV, homepage &amp; applications</a></li>
+    <li><a href="#community">Community &amp; career</a></li>
+    <li><a href="#integrity">Integrity &amp; well-being</a></li>
+    <li><a href="#rhythm">A rhythm for using this list</a></li>
+  </ol>
+</nav>
+
+<div class="progress-all" aria-live="polite">
+  <span id="overall-label">0 of 0 done</span>
+  <div class="bar"><span id="overall-bar"></span></div>
+  <button class="btn" id="hide" type="button" aria-pressed="false">Hide done</button>
+  <button class="btn" id="reset" type="button">Reset</button>
+</div>
+
+<!-- 1 -->
+<section id="foundations">
+  <h2><span class="num">1</span>Foundations still matter</h2>
+  <p class="sec-count" data-count></p>
+  <p>You cannot judge what you cannot do yourself. As AI writes more of our derivations, solid fundamentals turn from a requirement into a competitive advantage.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="f1"><span class="t"><b>I can derive the core results of my field by hand, without AI.</b><span class="why">Pick the ten or so results your field rests on and re-derive them on paper once a year.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="f2"><span class="t"><b>I do exercises myself before asking an AI.</b><span class="why">Struggling with a problem is how intuition forms. Reading a solution builds much less.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="f3"><span class="t"><b>I can explain every result in my papers at a blackboard, with no notes.</b><span class="why">If I can’t, I don’t yet own the result, whoever derived it.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="f4"><span class="t"><b>I know the order-of-magnitude numbers of my field by heart.</b><span class="why">Energy scales, timescales and system sizes. They make nonsense obvious at a glance.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="f5"><span class="t"><b>I regularly spend time thinking without AI.</b><span class="why">An hour with paper and pencil each week keeps the skills you will need to judge AI output from fading.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 2 -->
+<section id="taste">
+  <h2><span class="num">2</span>Research taste</h2>
+  <p class="sec-count" data-count></p>
+  <p>Choosing problems is the skill AI takes over last. Train it deliberately.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="t1"><span class="t"><b>I keep a problem notebook and review it monthly.</b><span class="why">Write down open questions, why each matters, and what would change if it were solved. Look back later to see which instincts were right.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="t2"><span class="t"><b>Before starting a project, I write one paragraph on why it matters.</b><span class="why">If the paragraph is weak, the project probably is too.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="t3"><span class="t"><b>I read classic papers in the original.</b><span class="why">Pay attention to how the great physicists chose their questions, not just to their answers.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="t4"><span class="t"><b>I aim higher than I would have five years ago.</b><span class="why">AI lowers the cost of entering a new area and trying many ideas, so the ambition of the problems you pick should rise to match.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="t6"><span class="t"><b>I ask which problems have only now become feasible.</b><span class="why">Calculations too long, searches too broad, or checks too tedious for one person may now be within reach. That is where early movers have an advantage.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="t5"><span class="t"><b>I follow one field next to mine seriously.</b><span class="why">New ideas often come from the borders between fields, and AI makes it much cheaper to learn a neighbouring field.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section id="ai">
+  <h2><span class="num">3</span>Working with AI</h2>
+  <p class="sec-count" data-count></p>
+  <p>Treat AI like lab equipment: master it, calibrate it, and never trust it blindly.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="a1"><span class="t"><b>I use AI agents for derivations, numerics and literature searches.</b><span class="why">The goal is to be one person doing the work of a small group. I keep the reasoning and the decisions for myself.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a2"><span class="t"><b>I am fluent in the standard numerical methods of my field.</b><span class="why">Know them well enough to read AI-written code critically and see when it is solving the wrong problem.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a7"><span class="t"><b>I ask AI for checkable intermediate steps, not just final answers.</b><span class="why">A derivation you can follow line by line is useful. A bare final formula is a guess you still have to verify.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a8"><span class="t"><b>I use AI as a hostile referee on my own drafts.</b><span class="why">Ask it to find the weakest claim, the missing reference and the confusing figure before a real referee does.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a3"><span class="t"><b>My code is reproducible.</b><span class="why">Use git, fixed environments and a public repository for each paper. AI makes code cheap to write, but code someone else can run is still rare.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a4"><span class="t"><b>I never cite a paper I haven’t opened.</b><span class="why">AI tools still invent references and misstate what papers say.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a5"><span class="t"><b>I keep a log of what AI contributed to each project.</b><span class="why">It makes honest acknowledgments easy and protects you if credit is ever disputed.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a9"><span class="t"><b>I know where my unpublished ideas go when I use an AI tool.</b><span class="why">Check each tool’s data and training settings before pasting in work you haven’t published yet.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="a6"><span class="t"><b>I know what formal proof assistants such as Lean can do.</b><span class="why">Most of physics is not formalized yet, so deep fluency isn’t needed today. Keep a reading knowledge, and revisit once your area is formalized.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section id="verify">
+  <h2><span class="num">4</span>Verification</h2>
+  <p class="sec-count" data-count></p>
+  <p>This is the physicist’s version of formal proof. It becomes more important the more you rely on machines.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="v1"><span class="t"><b>I check limiting cases, symmetries and dimensions for every result.</b><span class="why">Weak and strong coupling, high and low temperature, small systems, conservation laws, units.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="v2"><span class="t"><b>I confirm every important result by two independent routes.</b><span class="why">For example, analytics against numerics, or two different numerical methods. Use a different tool or model for the second check, not the same one asked twice.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="v3"><span class="t"><b>I compare with known results before trusting new ones.</b><span class="why">Reproduce a published benchmark first, then push past it.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="v4"><span class="t"><b>I write down in advance what would show I am wrong.</b><span class="why">Then actually go and look for it.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 5 -->
+<section id="reality">
+  <h2><span class="num">5</span>Staying close to nature</h2>
+  <p class="sec-count" data-count></p>
+  <p>Physics answers to experiment. A theorist connected to real systems has leverage that symbolic manipulation alone does not.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="r1"><span class="t"><b>I read at least one experimental or observational paper a week.</b><span class="why">Know what the best experiments and observations in your area can measure today.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="r2"><span class="t"><b>Each project ends with a question: what could be measured, and where?</b><span class="why">Even a rough proposal for a measurable signature makes a paper far more useful.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="r3"><span class="t"><b>I have talked seriously with an experimental group.</b><span class="why">Learn what they can measure, what is hard for them, and what they wish theorists would compute.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="program">
+  <h2><span class="num">6</span>Building a research program</h2>
+  <p class="sec-count" data-count></p>
+  <p>Committees hire a direction, not a pile of papers. Make your work add up to a story.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="g1"><span class="t"><b>I can state the one or two big questions behind all my work.</b><span class="why">Every project should visibly serve one of them. If one doesn’t, ask whether it should be a side project.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="g2"><span class="t"><b>My papers group into two to four clear research lines.</b><span class="why">Name each line in a few words. That structure becomes your research statement, your CV layout and your talk outline.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="g3"><span class="t"><b>I can point to an idea that was mine from the start.</b><span class="why">Independence is what moves you from student to postdoc to group leader. Make sure at least one project shows it.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="g4"><span class="t"><b>I finish things.</b><span class="why">One preprint on arXiv is worth more than three manuscripts in preparation. Set a deadline and post it.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="g5"><span class="t"><b>I carry ideas from one research line into another.</b><span class="why">Bringing a method from one context into another is often where the most original work comes from.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 7 -->
+<section id="writing">
+  <h2><span class="num">7</span>Writing</h2>
+  <p class="sec-count" data-count></p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="w1"><span class="t"><b>Each paper has a one-sentence claim.</b><span class="why">Write it before you write the paper. If you can’t, keep working on the physics.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="w2"><span class="t"><b>Most of my effort goes into the abstract, introduction and figures.</b><span class="why">That is what most readers, referees and hiring committees actually read.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="w3"><span class="t"><b>I write the first draft in my own voice.</b><span class="why">Use AI to polish language and catch errors, not to do your thinking. A clear voice is becoming a way to stand out.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="w4"><span class="t"><b>Every figure makes sense on its own.</b><span class="why">Clear axes, readable fonts, a caption that states the takeaway.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="w5"><span class="t"><b>My titles say what I found, not just what I studied.</b><span class="why">A title that states the result is easier to find, cite and remember.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section id="talks">
+  <h2><span class="num">8</span>Talks</h2>
+  <p class="sec-count" data-count></p>
+  <p>People hire, invite and collaborate with people they have heard speak. A talk is often your first impression.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="k1"><span class="t"><b>I have 5-, 20- and 50-minute versions of my main talk ready.</b><span class="why">The 5-minute version is the hardest, and it shows whether you really know your story.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="k2"><span class="t"><b>The first two minutes give the question, the result and why it matters.</b><span class="why">Don’t save the punchline for the end. Half the audience will have drifted off by then.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="k3"><span class="t"><b>One idea per slide, with the conclusion as the slide title.</b><span class="why">Use pictures and plots over equations. Keep only the equations you actually discuss.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="k4"><span class="t"><b>I record myself rehearsing and watch it.</b><span class="why">It’s uncomfortable, but nothing improves a talk faster.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="k5"><span class="t"><b>I prepare answers to the five hardest likely questions.</b><span class="why">Ask a colleague, or an AI, to play a skeptical audience member.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="k6"><span class="t"><b>I can explain my work to a non-physicist in one minute.</b><span class="why">Useful for interviews, funding agencies and dinner parties alike.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="k7"><span class="t"><b>I ask for talk invitations rather than waiting for them.</b><span class="why">Most group seminars are happy to host a visitor with a fresh preprint. Write a short email with the title and a two-line abstract.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 9 -->
+<section id="posters">
+  <h2><span class="num">9</span>Posters</h2>
+  <p class="sec-count" data-count></p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="p1"><span class="t"><b>The title states the result, not the topic.</b><span class="why">“Noise stabilizes order in X” beats “A study of noise in X.”</span></span></label></li>
+    <li><label><input type="checkbox" data-id="p2"><span class="t"><b>One large central figure carries the story.</b><span class="why">Someone walking past should get the main point in five seconds.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="p3"><span class="t"><b>Text is readable from two meters away, and there is little of it.</b><span class="why">Leave the details for conversation.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="p4"><span class="t"><b>I have a 30-second and a 3-minute pitch ready.</b><span class="why">Ask visitors what they work on first, then adjust your pitch to them.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="p5"><span class="t"><b>A QR code links to the paper and my homepage.</b><span class="why">The conversation is only the start. Make it easy for people to follow up.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 10 -->
+<section id="cv">
+  <h2><span class="num">10</span>CV, homepage &amp; applications</h2>
+  <p class="sec-count" data-count></p>
+  <p>A committee may spend only a few minutes on your file. Make those minutes count.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="cv1"><span class="t"><b>I log every talk and poster the day I give it.</b><span class="why">Note the title, venue, date and a link. Reconstructing them years later is painful, and an entry with no title looks thin.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="cv2"><span class="t"><b>My CV is easy to read, not crammed.</b><span class="why">If it doesn’t fit, cut entries (attendance-only meetings go first) rather than shrinking margins and spacing.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="cv3"><span class="t"><b>Every status on my CV is true today.</b><span class="why">“Under review,” “submitted,” “in preparation”: check them on the day you send the CV. Keep work in preparation clearly apart from public papers.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="cv4"><span class="t"><b>I can defend every method I list in an interview.</b><span class="why">A long skills list invites questions. List what you have actually used in your papers.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="cv5"><span class="t"><b>I describe my roles precisely.</b><span class="why">“Co-supervised,” “led,” “contributed to.” Committees know what a PhD student can do, and precise wording builds trust.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="cv6"><span class="t"><b>I confirm with my referees before listing them, and brief them.</b><span class="why">Send each one your CV, the position description, and two or three points you hope they can speak to.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="cv7"><span class="t"><b>I tailor each application to the program.</b><span class="why">Read the program’s own description of its research areas and show where you fit, but don’t claim areas you haven’t worked in.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c6"><span class="t"><b>My homepage matches my CV.</b><span class="why">A short research summary with a figure for each line of work, publications, talks, CV and a way to contact me. Committees will look.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section id="community">
+  <h2><span class="num">11</span>Community &amp; career</h2>
+  <p class="sec-count" data-count></p>
+  <p>Science is a social enterprise. Trust, reputation and collaboration matter more as raw output gets cheaper.</p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="c1"><span class="t"><b>At every conference I have three real conversations and follow up afterward.</b><span class="why">A short email with a question about their talk is enough.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c2"><span class="t"><b>I have at least one collaboration outside my own group.</b><span class="why">It broadens your view, and it shows you can work independently.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c3"><span class="t"><b>I help mentor a junior student.</b><span class="why">It trains the skills of a future group leader and deepens your own understanding.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c4"><span class="t"><b>I referee carefully and on time.</b><span class="why">With AI-generated papers on the rise, careful human review matters more, and it builds your reputation with editors.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c5"><span class="t"><b>I update my research statement every year.</b><span class="why">Writing it forces you to decide what you actually want to work on.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c7"><span class="t"><b>I share each new preprint with a short plain-language summary.</b><span class="why">A post or a homepage note helps the right people find your work.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="c8"><span class="t"><b>I apply for small grants, travel funds and fellowships early.</b><span class="why">Even small awards show you can attract funding, and writing proposals is practice for the big ones.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section id="integrity">
+  <h2><span class="num">12</span>Integrity &amp; well-being</h2>
+  <p class="sec-count" data-count></p>
+  <ul class="check">
+    <li><label><input type="checkbox" data-id="i1"><span class="t"><b>I state clearly what AI did and what I did.</b><span class="why">Being open about this builds the trust your career rests on.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="i2"><span class="t"><b>I give credit generously to people and prior work.</b><span class="why">Including unpublished ideas that people shared with you.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="i3"><span class="t"><b>I keep a sustainable pace.</b><span class="why">AI makes it possible to work endlessly. Good ideas still need rest, walks and time away from the screen.</span></span></label></li>
+    <li><label><input type="checkbox" data-id="i4"><span class="t"><b>I remember why I do physics.</b><span class="why">To understand nature. A machine’s result is a beginning. Understanding it is what makes it physics.</span></span></label></li>
+  </ul>
+</section>
+
+<!-- Rhythm -->
+<section id="rhythm">
+  <h2><span class="num">13</span>A rhythm for using this list</h2>
+  <p>A checklist only helps if you come back to it. This is the rhythm I aim for.</p>
+  <dl class="rhythm">
+    <div><dt>Every week</dt><dd>Read one experimental paper. Spend an hour thinking with paper and pencil, without AI. Run the verification checks on whatever I produced that week.</dd></div>
+    <div><dt>After every talk or poster</dt><dd>Log the title, venue, date and link. Write down the question I couldn’t answer well, and answer it.</dd></div>
+    <div><dt>Every month</dt><dd>Review the problem notebook. Check which project is closest to finished, and finish it.</dd></div>
+    <div><dt>Every semester</dt><dd>Pick three unticked items from this page to work on. Update the homepage.</dd></div>
+    <div><dt>Every year</dt><dd>Re-derive the core results of my field by hand. Rewrite the research statement and refresh the CV. Reread this page and change what no longer fits.</dd></div>
+  </dl>
+</section>
+
+<footer>
+  <p>Inspired by Gerard ’t Hooft’s <a href="https://www.goodtheorist.science/">How to become a GOOD Theoretical Physicist</a>, which remains the place to start for <em>what</em> to learn.</p>
+  <p>In the spirit of section 12: this page was drafted with the help of Claude, an AI model made by Anthropic, then reviewed and edited by me. The choices and any mistakes are mine.</p>
+  <p>Your ticks are saved only in this browser. Suggestions are welcome; see <a href="https://zuowang23.github.io/">my homepage</a> for contact details.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "good-theorist-ai-checklist-v1";
+  var HIDE_KEY = "good-theorist-ai-hide-done";
+  var store = {};
+  function get(k, fallback) {
+    try { var v = localStorage.getItem(k); return v === null ? fallback : v; } catch (e) { return fallback; }
+  }
+  function set(k, v) {
+    try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable: keep in memory */ }
+  }
+  try { store = JSON.parse(get(KEY, "{}")) || {}; } catch (e) { store = {}; }
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('ul.check input[type="checkbox"]'));
+  function update() {
+    var done = 0;
+    boxes.forEach(function (b) {
+      if (b.checked) done++;
+      var li = b.closest("li");
+      if (li) li.classList.toggle("is-done", b.checked);
+    });
+    document.getElementById("overall-label").textContent = done + " of " + boxes.length + " done";
+    document.getElementById("overall-bar").style.width = (boxes.length ? (100 * done / boxes.length) : 0) + "%";
+    document.querySelectorAll("section").forEach(function (sec) {
+      var el = sec.querySelector("[data-count]");
+      if (!el) return;
+      var bs = sec.querySelectorAll('input[type="checkbox"]');
+      var d = 0; bs.forEach(function (b) { if (b.checked) d++; });
+      el.textContent = d + " / " + bs.length;
+    });
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!store[b.dataset.id];
+    b.addEventListener("change", function () {
+      if (b.checked) store[b.dataset.id] = 1; else delete store[b.dataset.id];
+      set(KEY, JSON.stringify(store)); update();
+    });
+  });
+
+  var hideBtn = document.getElementById("hide");
+  function applyHide(on) {
+    document.body.classList.toggle("hide-done", on);
+    hideBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    hideBtn.textContent = on ? "Show done" : "Hide done";
+  }
+  applyHide(get(HIDE_KEY, "0") === "1");
+  hideBtn.addEventListener("click", function () {
+    var on = !document.body.classList.contains("hide-done");
+    applyHide(on); set(HIDE_KEY, on ? "1" : "0");
+  });
+
+  var resetBtn = document.getElementById("reset");
+  var armed = false, timer = null;
+  resetBtn.addEventListener("click", function () {
+    if (!armed) {
+      armed = true; resetBtn.textContent = "Click again to clear";
+      timer = setTimeout(function () { armed = false; resetBtn.textContent = "Reset"; }, 3000);
+      return;
+    }
+    clearTimeout(timer); armed = false; resetBtn.textContent = "Reset";
+    store = {}; set(KEY, "{}");
+    boxes.forEach(function (b) { b.checked = false; });
+    update();
+  });
+  update();
+})();
+</script>
+</body>
+</html>
